@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Private Data Lake Qvencher</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="app_icon.png" />
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="brand">
+      <img src="app_icon.png" alt="Qvencher App Icon" class="app-icon"/>
+      <span class="brand-name">Private Data Lake Qvencher</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="EULA.html">EULA</a>
+      <a href="privacy.html">Privacy</a>
+      <div class="docs-dropdown">
+      <a href="latest/features.html" id="docsLink" class="docs-link">
+          Features
+      </a>
+      <select class="version-select" id="versionSelect">
+          <option value="latest" selected>latest</option>
+          <option value="latest">v1.0</option>
+      </select>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Private. Offline. Blazing Fast.</h1>
+      <p class="subtitle">
+        Qvencher is a native, offline, high-performance data querying tool
+        designed for serious data analysis—without compromising privacy.
+      </p>
+      <br/>
+      <p class="subtitle">
+        Qvencher stands for <b><u>Q</u></b>uery <b><u>V</u></b>ector <b><u>E</u></b>xecutio<b><u>n</u></b> <b><u>C</u></b>anvas for <b><u>H</u></b>ierarchical
+        <b><u>E</u></b>ntity <b><u>R</u></b>elationships.
+      </p>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>🔒 Local-First Privacy</h3>
+        <p>No data ever leaves your device. Zero telemetry. Zero tracking.</p>
+      </div>
+
+      <div class="feature">
+        <h3>📂 Broad File Support</h3>
+        <p>Parquet, Avro, Iceberg, SQLite, DuckDB, CSV, JSON, logs, and SQL/ODBC databases.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💻 Cross-Platform</h3>
+        <p>Available on Windows, macOS, Android, and iOS.</p>
+      </div>
+
+      <div class="feature">
+        <h3>⚡ Performance-Focused</h3>
+        <p>Efficiently handles datasets exceeding billions of records.</p>
+      </div>
+
+      <div class="feature">
+        <h3>📱 Mobile-First Design</h3>
+        <p>Optimized for tablets and mobiles without sacrificing power.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🎯 Simple & Practical UI</h3>
+        <p>Designed for usability—no unnecessary bloat.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>
+        © <span id="year"></span> <strong>Arundale Ramanathan</strong> · Siara Logics (India)
+      </span>
+      <img src="siara-in.png" alt="Siara Logics Logo" class="company-logo"/>
+    </div>
+  </footer>
+
+  <script>
+    const versionSelect = document.getElementById("versionSelect");
+    const docsLink = document.getElementById("docsLink");
+    document.getElementById("year").textContent = new Date().getFullYear();
+    function updateDocsLink() {
+        const version = versionSelect.value;
+        docsLink.href = `${version}/features.html`;
+    }
+
+    versionSelect.addEventListener("change", () => {
+      window.location.href = `${versionSelect.value}/features.html`;
+    });
+    </script>
+
+</body>
+</html>
