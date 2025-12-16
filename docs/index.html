@@ -1,36 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Private Data Lake Qvencher</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" href="app_icon.png" />
-</head>
-<body>
-
-  <header class="top-bar">
-    <div class="brand">
-      <img src="app_icon.png" alt="Qvencher App Icon" class="app-icon"/>
-      <span class="brand-name">Private Data Lake Qvencher</span>
-    </div>
-
-    <nav class="nav-links">
-      <a href="EULA.html">EULA</a>
-      <a href="privacy.html">Privacy</a>
-      <div class="docs-dropdown">
-      <a href="latest/features.html" id="docsLink" class="docs-link">
-          Features
-      </a>
-      <select class="version-select" id="versionSelect">
-          <option value="latest" selected>latest</option>
-          <option value="latest">v1.0</option>
-      </select>
-      </div>
-    </nav>
-  </header>
-
-  <main class="container">
+---
+layout: default
+title: Home
+---
+<main class="container">
     <section class="hero">
       <h1>A GUI for data lakes that respects your privacy.</h1>
       <p class="subtitle">
@@ -76,29 +48,3 @@
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <span>
-        © <span id="year"></span> <strong>Arundale Ramanathan</strong> · Siara Logics (India)
-      </span>
-      <img src="siara-in.png" alt="Siara Logics Logo" class="company-logo"/>
-    </div>
-  </footer>
-
-  <script>
-    const versionSelect = document.getElementById("versionSelect");
-    const docsLink = document.getElementById("docsLink");
-    document.getElementById("year").textContent = new Date().getFullYear();
-    function updateDocsLink() {
-        const version = versionSelect.value;
-        docsLink.href = `${version}/features.html`;
-    }
-
-    versionSelect.addEventListener("change", () => {
-      window.location.href = `${versionSelect.value}/features.html`;
-    });
-    </script>
-
-</body>
-</html>

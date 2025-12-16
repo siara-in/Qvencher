@@ -1,26 +1,27 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Private Data Lake Qvencher</title>
-  <link rel="stylesheet" href="/styles.css"/>
-  <link rel="icon" href="/app_icon.png" />
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}"/>
 </head>
 <body>
 
   <header class="top-bar">
     <div class="brand">
-      <img src="/app_icon.png" alt="Qvencher App Icon" class="app-icon"/>
+      <img src="{{ '/app_icon.png' | relative_url }}" alt="Qvencher App Icon" class="app-icon"/>
       <span class="brand-name">Private Data Lake Qvencher</span>
     </div>
 
     <nav class="nav-links">
-      <a href="/EULA.html">EULA</a>
-      <a href="/privacy.html">Privacy</a>
+      <a href="{{ '/EULA.html' | relative_url }}">EULA</a>
+      <a href="{{ '/privacy.html' | relative_url }}">Privacy</a>
       <div class="docs-dropdown">
-      <a href="/latest/features.html" id="docsLink" class="docs-link">
-          Features
+      <a href="{{ '/latest/features.html' | relative_url }}" id="docsLink" class="docs-link">
+        Features
       </a>
       <select class="version-select" id="versionSelect">
           <option value="latest" selected>latest</option>
@@ -41,7 +42,7 @@
       <span>
         © <span id="year"></span> <strong>Arundale Ramanathan</strong> · Siara Logics (India)
       </span>
-      <img src="/siara-in.png" alt="Siara Logics Logo" class="company-logo"/>
+      <img src="{{ '/siara-in.png' | relative_url }}" alt="Siara Logics Logo" class="company-logo"/>
     </div>
   </footer>
 
@@ -51,11 +52,13 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     function updateDocsLink() {
         const version = versionSelect.value;
-        docsLink.href = `/${version}/features.html`;
+        var rootPath = "{{ '/' | relative_url }}"
+        docsLink.href = rootPath + version + "/features.html";
     }
 
     versionSelect.addEventListener("change", () => {
-      window.location.href = `/${versionSelect.value}/features.html`;
+      var rootPath = "{{ '/' | relative_url }}"
+      window.location.href = rootPath + versionSelect.value + "/features.html";
     });
     </script>
 
